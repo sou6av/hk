@@ -1,18 +1,20 @@
 {
-  "name": "awesome college project",
-  "description": "My awesome college project worker",
-  "stack": "container",
-  "env": {
-    "SESSION": {
-      "description": "The session",
-      "required": true
-    }
-  },
-  "addons": ["heroku-postgresql"],
-  "formation": {
-    "worker": {
-      "quantity": 1,
-      "size": "hobby"
-    }
-  }
+  "name": "awesome college project",
+  "description": "My awesome college project worker",
+  "stack": "container",
+  "env": {
+    "SESSION": {
+      "description": "The session",
+      "required": true
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "formation": [
+    {
+      "process": "worker",
+      "quantity": 1
+    }
+  ]
 }
